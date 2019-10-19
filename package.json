@@ -1,0 +1,25 @@
+{
+  "name": "finanzaspersonalesgimena",
+  "version": "1.0.0",
+  "description": "App para el manejo de tus finanzas personales o familiares",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "nodaemon": "^0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSanchez98/FinanzasPersonalesGimena.git"
+  },
+  "author": "Gimena Sanchez Cabrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSanchez98/FinanzasPersonalesGimena/issues"
+  },
+  "homepage": "https://github.com/GSanchez98/FinanzasPersonalesGimena#readme"
+}
