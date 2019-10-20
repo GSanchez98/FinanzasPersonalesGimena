@@ -16,10 +16,18 @@
     "slug": "^1.1.0"
   },
   "devDependencies": {
-    "express": "^4.17.1"
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.0",
+    "express": "^4.17.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   },
   "scripts": {
-    "start": "nodemon ./index.js"
+    "dev": "nodemon ./index",
+    "watch": "webpack --w --mode development",
+    "start": "concurrently \"npm run dev\" \"npm run watch\""
   },
   "repository": {
     "type": "git",
