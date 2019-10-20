@@ -12,8 +12,10 @@
     <title>{{nombrePagina}}</title>
 </head>
 
+
+
 <body>
-        <div id="wrapper">
+	<div id="wrapper">
 
 				<!-- Encabezados -->
 					<header id="header" class="alt">
@@ -24,64 +26,12 @@
                         {{/if}}
 					</header>
 
-                <!-- Barra de navegacion -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#descripcion" class="active">Descripción</a></li>
-							<li><a href="#inicioSesion">Iniciar Sesión</a></li>
-							<li><a href="#crearCuenta">Crear Cuenta</a></li>
-						</ul>
-					</nav>
+					
+        {{{body}}}
 
-                <!-- Principal -->
-					<div id="main">
 
-                <!-- Descripcion -->
-							<section id="descripcion" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>{{nombrePagina}}</h2>
-										</header>
-										<p>{{descripcion}}.</p>
-									</div>
-									<span class="image"><img src="../../public/images/FP.jpg" alt="" /></span>
-								</div>
-							</section>
-
-                <!-- Iniciar Sesión -->
-							<section id="inicioSesion" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>{{nombrePagina}}</h2>
-										</header>
-										<p>{{inicioSesion}}.</p>
-                                        <a href="/usuario/accesoUsuario" class="button primary">Iniciar sesión</a>
-									</div>
-									<span class="image"><img src="../../images/pic02.jpg" alt="" /></span>
-								</div>
-							</section>
-
-                <!-- Crear Cuenta -->
-							<section id="crearCuenta" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>{{nombrePagina}}</h2>
-										</header>
-										<p>{{crearCuenta}}.</p>
-                                        <a href="/usuario/nuevoUsuario" class="button primary">Crear nueva cuenta</a>
-									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-								</div>
-							</section>                
-
-                
-
-                     </div>
-            <!-- Footer -->
-					<footer id="footer">
+		<!-- Footer -->
+			<footer id="footer">
 						<section>
 							<h2>Una opción para sus ahorros</h2>
 							<p>La toma de decisiones de inversión no es algo que se deba tomar a la ligera. Como inversor, usted tiene que elegir un camino entre varios; esa elección influirá en su capacidad financiera, presente y futura.</p>
@@ -107,14 +57,6 @@
 						<p class="copyright">&copy;2019, <a href="https://www.facebook.com/yosseny.gimena">Gimena Sánchez</a>.</p>
 					</footer>
 
-            <!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.scrollex.min.js"></script>
-			<script src="/js/jquery.scrolly.min.js"></script>
-			<script src="/js/browser.min.js"></script>
-			<script src="/js/breakpoints.min.js"></script>
-			<script src="/js/util.js"></script>
-			<script src="/js/main.js"></script>
 
 </body>
 

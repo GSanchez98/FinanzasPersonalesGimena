@@ -1,0 +1,38 @@
+<main class="contenedor">
+    <form action="/cuenta/nueva" method="post" class="default-form">
+        <h3>Nuevo Registro</h3>
+
+        <div class="campo">
+            <label for="nombre">Nombre de la cuenta:</label>
+            <input type="text" name="nombre" placeholder="Salario, Renta, Supermercado, Ventas, etc...">
+        </div>
+
+        <div class="campo">
+            <label for="salario">Monto (LPS):</label>
+            <input type="text" name="monto" placeholder="L. 1200">
+        </div>
+
+        <div class="campo">
+            <label for="Tcuenta">Tipo de cuenta</label>
+            <select name="Tcuenta">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso">Egreso</option>
+            </select>
+        </div>
+
+        <label>Descripción de la cuenta</label>
+        <div class="campo descripcion">
+            {{!-- Implementar un WYSIWYG --}}
+            
+        </div>
+
+        <footer class="major">
+				<ul class="actions special">
+					<li><a type= "submit" href="#" class="button">Guardar Registro</a></li>
+                    <li><a type= "submit" href="/" class="button">Cancelar</a></li>
+				</ul>
+			</footer>
+        
+    </form>
+</main>
