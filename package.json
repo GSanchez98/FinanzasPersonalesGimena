@@ -4,11 +4,12 @@
   "description": "App para el manejo de tus finanzas personales o familiares",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "nodaemon": "^0.0.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
   "scripts": {
     "start": "nodemon ./index.js"
   },

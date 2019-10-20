@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const homeController = require("../controllers/homeController");
 
 module.exports = () => {
-  router.get("/", (req, res) => {
-    res.send("Hasta aqui funciona la app de Finanzas.");
-  });
+  router.get("/", homeController.mostrarbalance);
 
   return router;
 };
