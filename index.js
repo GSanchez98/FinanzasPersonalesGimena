@@ -4,6 +4,16 @@ const path = require("path");
 
 const router = require("./routes/index");
 
+const mongoose = require("mongoose");
+require("./config/db");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+
+// Habilitando el archivo de variables de entorno
+require("dotenv").config({ path: "variables.env" });
+
+
 const app = express();
 
 // HABILITANDO HANDLEBARS

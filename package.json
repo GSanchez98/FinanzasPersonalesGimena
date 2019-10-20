@@ -4,8 +4,16 @@
   "description": "App para el manejo de tus finanzas personales o familiares",
   "main": "index.js",
   "dependencies": {
+    "async": "^3.1.0",
+    "connect-mongo": "^3.0.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
     "express-handlebars": "^3.1.0",
-    "nodaemon": "^0.0.5"
+    "express-session": "^1.17.0",
+    "mongoose": "^5.7.5",
+    "nodaemon": "^0.0.5",
+    "shortid": "^2.2.15",
+    "slug": "^1.1.0"
   },
   "devDependencies": {
     "express": "^4.17.1"
