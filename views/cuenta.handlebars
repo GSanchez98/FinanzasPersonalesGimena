@@ -1,0 +1,35 @@
+<div class="contenedor">
+    <div class="">
+        <p class="">Nombre de la cuenta: </p>
+        <p class="">{{cuenta.nombre}}</p>
+    </div>
+
+    <div class="">
+        <p class="">Monto: </p>
+        <p class="">{{cuenta.monto}}</p>
+    </div>
+
+    <div class="">
+        <p class="">Tipo :</p>
+        <p class="">{{cuenta.tipo}}</p>
+    </div>
+
+    <div class="">
+        <p class="">Descripción :</p>
+        <p class="">{{cuenta.descripcion}}</p>
+    </div>
+</div>
+
+<div class="">
+    <main class="">
+        <h2>Descripción de la cuenta</h2>
+
+        <div class="">
+            {{{cuenta.descripcion}}}
+        </div>
+
+        {{!-- Editar la cuenta --}}
+        <a href="/cuenta/editar/{{cuenta.url}}" class="">Editar cuenta</a>
+    </main>
+
+</div>

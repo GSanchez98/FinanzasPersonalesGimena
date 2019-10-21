@@ -15,7 +15,11 @@ const cuentaSchema = new mongoose.Schema({
       default: 0,
       trim: true
     },
-    contrato: {
+    tipo: {
+      type: String,
+      trim: true
+    },
+    descripcion: {
       type: String,
       trim: true
     },
@@ -33,5 +37,4 @@ const cuentaSchema = new mongoose.Schema({
     next();
   });
   
-  module.exports = mongoose.model("Cuentas", cuentaSchema);
-  
+  module.exports = mongoose.model("Cuenta", cuentaSchema);

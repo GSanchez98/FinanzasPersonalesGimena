@@ -1,70 +1,23 @@
- <main class="contenedor">
-    <form action="/cuenta/nueva" method="post" class="default-form">
-    <!-- Barra de navegacion -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#descripcion" class="active">Descripción</a></li>
-							<li><a href="#inicioSesion">Iniciar Sesión</a></li>
-							<li><a href="#crearCuenta">Crear Cuenta</a></li>
-						</ul>
-					</nav>
+<main class="">
+    <h2>Lista de cuentas</h2>
 
-                <!-- Principal -->
-					<div id="main">
+    {{#each cuentas}}
+    <div class="">
+        <div class="">
+            <h3>{{nombre}}</h3>
+        </div>
+        <div class="">
+            <h3>{{tipo}}</h3>
+        </div>
+        <div class="">
+            <h3>{{monto}}</h3>
+        </div>
 
-                <!-- Descripcion -->
-							<section id="descripcion" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>{{nombrePagina}}</h2>
-										</header>
-										<p>{{descripcion}}.</p>
-										<a href="/cuenta/nueva" class="button primary">Crear nuevo registro</a>
-									</div>
-									<span class="image"><img src="../../public/images/FP.jpg" alt="" /></span>
-								</div>
-							</section>
+        <div class="">
+            <a href="/cuenta/{{url}}" class="">Más información</a>
+        </div>
+    </div>
+    {{/each}}
+	
+</main>
 
-                <!-- Iniciar Sesión -->
-							<section id="inicioSesion" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>{{nombrePagina}}</h2>
-										</header>
-										<p>{{inicioSesion}}.</p>
-                                        <a href="/usuario/accesoUsuario" class="button primary">Iniciar sesión</a>
-									</div>
-									<span class="image"><img src="../../images/pic02.jpg" alt="" /></span>
-								</div>
-							</section>
-
-                <!-- Crear Cuenta -->
-							<section id="crearCuenta" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>{{nombrePagina}}</h2>
-										</header>
-										<p>{{crearCuenta}}.</p>
-                                        <a href="/usuario/nuevoUsuario" class="button primary">Crear nueva cuenta</a>
-									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-								</div>
-							</section>                
-
-                
-
-                     </div>
-            
-            <!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.scrollex.min.js"></script>
-			<script src="/js/jquery.scrolly.min.js"></script>
-			<script src="/js/browser.min.js"></script>
-			<script src="/js/breakpoints.min.js"></script>
-			<script src="/js/util.js"></script>
-			<script src="/js/main.js"></script>
-    </form>
- </main>
