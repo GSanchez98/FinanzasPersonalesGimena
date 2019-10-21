@@ -32,8 +32,23 @@
                         {{/if}}
 					</header>
 
-					
+
+		<div class="contenido-principal contenedor">
+        {{#if messages}}
+        <div class="alertas">
+            {{#mostrarAlertas messages}}
+            {{/mostrarAlertas}}
+        </div>
+        {{/if}}
         {{{body}}}
+    </div>
+
+    {{!-- Script para trix (WYSIWGY) --}}
+    <script src="/js/trix.js"></script>
+    {{!-- Webpack bundle --}}
+    <script src="/dist/bundle.js"></script>
+
+					
 
 
 		<!-- Footer -->
