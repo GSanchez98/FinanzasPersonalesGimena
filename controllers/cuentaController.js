@@ -32,3 +32,37 @@ exports.formularioNuevaCuenta = (req, res) => {
     });
   };
   
+// Muestra el formulario para editar una vacante
+exports.formularioEditarCuenta = async (req, res, next) => {
+  const cuenta = await Cuenta.findOne({ url: req.params.url });
+
+  // Si no existe la cuenta
+  if (!cuenta) return next();
+
+  res.render("editarCuenta", {
+    nombrePagina: `Editar ${cuenta.nombre}`,
+    cuenta
+  });
+};
+
+// Almacenar una cuenta editada
+exports.editarCuenta = async (req, res, next) => {
+  const cuentaEditada = req.body;
+
+  // Convertir las skills a un arreglo de skills
+  cuentaEditada.skills = req.body.skills.split(",");
+
+  console.log(cuentaEditada);
+
+  // Almacenar la cuenta editada
+  const cuenta = await Cuenta.findOneAndUpdate(
+    { url: req.params.url },
+    cuentaEditada,
+    {
+      new: true,
+      runValidators: true
+    }
+  );
+
+  res.redirect(`/cuenta/${cuenta.url}`);
+};

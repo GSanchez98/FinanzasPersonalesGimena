@@ -1,0 +1,40 @@
+<main class="">
+    <form action="/cuenta/editar/{{cuenta.url}}" method="post" class="default-form">
+        <h3>Nuevo Registro</h3>
+
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Salario, Renta, Supermercado, Ventas, etc..."
+                value={{cuenta.nombre}}>
+        </div>
+
+        <div class="campo">
+            <label for="monto">Monto (LPS):</label>
+            <input type="text" name="monto" placeholder="L. 1200" 
+                value="{{cuenta.monto}}">
+        </div>
+
+        <div class="campo">
+            <label for="Tcuenta">Tipo de cuenta</label>
+            <select name="Tcuenta">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso">Egreso</option>
+            </select>
+        </div>
+
+        <h3>Descripción de la cuenta</h3>
+        <div class="campo descripcion">
+            {{!-- Implementar un WYSIWYG --}}
+            <label>Descripción</label>
+            <input type="hidden" name="descripcion" id="x" value="{{{cuenta.descripcion}}}">
+            <trix-editor input="x"></trix-editor>
+        </div>
+
+
+        <div class="campo">
+            <input type="hidden" name="skills" id="skills">
+            <input type="submit" value="Guardar Cambios" class="btn btn-azul">
+        </div>
+    </form>
+</main>

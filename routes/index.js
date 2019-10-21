@@ -12,6 +12,9 @@ module.exports = () => {
   // Mostrar una cuenta
   router.get("/cuenta/:url", cuentaController.mostrarCuenta);
 
+// Editar una cuenta
+router.get("/cuenta/editar/:url", cuentaController.formularioEditarCuenta);
+router.post("/cuenta/editar/:url", cuentaController.editarCuenta);
 
   return router;
 };
