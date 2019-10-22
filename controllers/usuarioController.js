@@ -5,13 +5,16 @@ const { validationResult } = require("express-validator");
 // Caraga el formulario para la creación de una cuenta de usuario
 exports.formularioCrearCuenta = (req, res) => {
   res.render("crearCuenta", {
-    nombrePagina: "Crea tu cuenta en DevFinder",
-    tagline: "¡Comienza a publicar tus vacantes de forma gratuita!"
+    nombrePagina: "Crea tu cuenta en Finanzas",
+    tagline: "¡Comienza a publicar tus cuentas de forma gratuita!"
   });
 };
 
 // Almacena una cuenta de usuario
 exports.agregarUsuario = async (req, res, next) => {
+  console.log(req.body);
+
+
   // Verificar que no existan errores de validación
   const errores = validationResult(req);
   const erroresArray = [];
@@ -20,20 +23,41 @@ exports.agregarUsuario = async (req, res, next) => {
   if (!errores.isEmpty()) {
     errores.array().map(error => erroresArray.push(error.msg));
 
-    // Enviar los errores de regreso al usuario
+     // Enviar los errores de regreso al usuario
     req.flash("error", erroresArray);
 
     res.render("crearCuenta", {
-      nombrePagina: "Crea tu ceunta en DevFinder",
-      tagline: "¡Comienza a publicar tus vacantes de forma gratuita!",
+      nombrePagina: "Crea tu cuenta en Finanzas",
+      tagline: "¡Comienza a publicar tus cuentas de forma gratuita!",
       messages: req.flash()
     });
+    return;
   }
 
   // Crear el usuario
   const usuario = new Usuario(req.body);
 
-  // await usuario.save();
+// tratar de almacenar el usuario
+try {
+  await usuario.save();
+} catch (error) {
+  // Ingresar el error al arreglo de errores
+  erroresArray.push(error);
+  req.flash("error", erroresArray);
 
-  res.redirect("/crearCuenta");
+  // renderizar la página con los errores
+  res.render("crearCuenta", {
+    nombrePagina: "Crea tu cuenta en finanzas",
+    tagline: "¡Comienza a publicar tus cuentas de forma gratuita!",
+    messages: req.flash()
+  });
+}
 };
+
+// Mostrar el formulario de inicio de sesión
+exports.formularioInicioSesion = (req, res) => {
+res.render("iniciarSesion", {
+  nombrePagina: "Iniciar sesión en fiannzas"
+});
+};
+

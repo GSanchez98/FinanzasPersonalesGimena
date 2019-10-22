@@ -5,6 +5,8 @@ const { check } = require("express-validator");
 const homeController = require("../controllers/homeController");
 const cuentaController = require("../controllers/cuentaController");
 const usuarioController = require("../controllers/usuarioController");
+const authController = require("../controllers/authController");
+
 
 module.exports = () => {
   router.get("/", homeController.mostrarbalance);
@@ -49,5 +51,11 @@ router.post(
   usuarioController.agregarUsuario
 );
 
+ // Iniciar sesión
+ router.get("/iniciarSesion", usuarioController.formularioInicioSesion);
+ router.post("/iniciarSesion", authController.autenticarUsuario);
+
+ 
 return router;
 };
+

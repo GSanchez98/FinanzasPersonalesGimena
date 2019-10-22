@@ -11,6 +11,9 @@ exports.formularioNuevaCuenta = (req, res) => {
   // Agregar una nueva cuenta a la base de datos
   exports.agregarCuenta = async (req, res) => {
     const cuenta = new Cuenta(req.body);
+
+    // Agregrando el usuario que crea la cuenta
+    cuenta.autor = req.user._id;
   
     // Almacenar en la base de datos
     const nuevaCuenta = await cuenta.save();
@@ -48,9 +51,6 @@ exports.formularioEditarCuenta = async (req, res, next) => {
 // Almacenar una cuenta editada
 exports.editarCuenta = async (req, res, next) => {
   const cuentaEditada = req.body;
-
-  // Convertir las skills a un arreglo de skills
-  cuentaEditada.skills = req.body.skills.split(",");
 
   console.log(cuentaEditada);
 

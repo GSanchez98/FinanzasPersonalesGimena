@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./public/js/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./public/js/app.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./public/js/main.js":
-/*!***************************!*\
-  !*** ./public/js/main.js ***!
-  \***************************/
+/***/ "./public/js/app.js":
+/*!**************************!*\
+  !*** ./public/js/app.js ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("/*\r\n\tStellar by HTML5 UP\r\n\thtml5up.net | @ajlkn\r\n\tFree for personal and commercial use under the CCA 3.0 license (html5up.net/license)\r\n*/\n(function ($) {\n  var $window = $(window),\n      $body = $('body'),\n      $main = $('#main'); // Breakpoints.\n\n  breakpoints({\n    xlarge: ['1281px', '1680px'],\n    large: ['981px', '1280px'],\n    medium: ['737px', '980px'],\n    small: ['481px', '736px'],\n    xsmall: ['361px', '480px'],\n    xxsmall: [null, '360px']\n  }); // Play initial animations on page load.\n\n  $window.on('load', function () {\n    window.setTimeout(function () {\n      $body.removeClass('is-preload');\n    }, 100);\n  }); // Nav.\n\n  var $nav = $('#nav');\n\n  if ($nav.length > 0) {\n    // Shrink effect.\n    $main.scrollex({\n      mode: 'top',\n      enter: function enter() {\n        $nav.addClass('alt');\n      },\n      leave: function leave() {\n        $nav.removeClass('alt');\n      }\n    }); // Links.\n\n    var $nav_a = $nav.find('a');\n    $nav_a.scrolly({\n      speed: 1000,\n      offset: function offset() {\n        return $nav.height();\n      }\n    }).on('click', function () {\n      var $this = $(this); // External link? Bail.\n\n      if ($this.attr('href').charAt(0) != '#') return; // Deactivate all links.\n\n      $nav_a.removeClass('active').removeClass('active-locked'); // Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).\n\n      $this.addClass('active').addClass('active-locked');\n    }).each(function () {\n      var $this = $(this),\n          id = $this.attr('href'),\n          $section = $(id); // No section for this link? Bail.\n\n      if ($section.length < 1) return; // Scrollex.\n\n      $section.scrollex({\n        mode: 'middle',\n        initialize: function initialize() {\n          // Deactivate section.\n          if (browser.canUse('transition')) $section.addClass('inactive');\n        },\n        enter: function enter() {\n          // Activate section.\n          $section.removeClass('inactive'); // No locked links? Deactivate all links and activate this section's one.\n\n          if ($nav_a.filter('.active-locked').length == 0) {\n            $nav_a.removeClass('active');\n            $this.addClass('active');\n          } // Otherwise, if this section's link is the one that's locked, unlock it.\n          else if ($this.hasClass('active-locked')) $this.removeClass('active-locked');\n        }\n      });\n    });\n  } // Scrolly.\n\n\n  $('.scrolly').scrolly({\n    speed: 1000\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./public/js/main.js?");
+eval("document.addEventListener(\"DOMContentLoaded\", function () {\n  // Limpiar las alertas\n  var alertas = document.querySelector(\".alertas\");\n\n  if (alertas) {\n    limpiarAlertas(alertas);\n  }\n});\n\nvar limpiarAlertas = function limpiarAlertas(alertas) {\n  // Verificar si el div alertas tiene hijos\n  var interval = setInterval(function () {\n    if (alertas.children.length > 0) {\n      alertas.removeChild(alertas.children[0]);\n    } else {\n      alertas.parentElement.removeChild(alertas);\n      clearInterval(interval);\n    }\n  }, 3000);\n};\n\n//# sourceURL=webpack:///./public/js/app.js?");
 
 /***/ })
 

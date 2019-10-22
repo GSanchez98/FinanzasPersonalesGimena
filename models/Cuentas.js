@@ -27,6 +27,11 @@ const cuentaSchema = new mongoose.Schema({
       type: String,
       lowercase: true
     },
+  autor: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Usuarios",
+    required: "El autor es obligatorio"
+  }
   });
   // Hooks para generar la URL (en Mongoose se conoce como middleware)
   cuentaSchema.pre("save", function(next) {
