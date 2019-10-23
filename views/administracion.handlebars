@@ -1,0 +1,28 @@
+<main class="">
+    <h2>Navegación</h2>
+
+    <div class="">
+        <a href="/editarPerfil" class="">Editar perfil</a>
+        <a href="/cuenta/nueva" class="">Nueva cuenta</a>
+    </div>
+
+    <h2>Tus cuentas</h2>
+    <div class="">
+        {{#if cuentas.length}}
+        {{#each cuentas}}
+        <div class="caja">
+            <h3>{{nombre}}</h3>
+            <p class="puesto">{{monto}}</p>
+        </div>
+        <div class="centrar-vertical caja">
+            <a href="/cuenta/editar/{{url}}" class="">Editar</a>
+        </div>
+        <div class="centrar-vertical caja">
+            <a href="#" data-eliminar="{{id}}" class="">Eliminar</a>
+        </div>
+        {{/each}}
+        {{else}}
+        <p>Aún no tienes cuentas registradas</p>
+        {{/if}}
+    </div>
+</main>

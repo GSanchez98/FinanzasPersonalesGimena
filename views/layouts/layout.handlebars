@@ -9,33 +9,36 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900&display=swap" rel="stylesheet">
     {{!-- Hoja de estilos personalizada  --}}
     <link rel="stylesheet" href="/css/main.css">
-	{{!-- Hoja de estilos para trix (WYSIWYG) --}}
+    {{!-- Hoja de estilos para trix (WYSIWYG) --}}
     <link rel="stylesheet" href="/css/trix.css">
-	{{!-- Webpack bundle --}}
-    <script src="/dist/bundle.js"></script>
-	
     <title>{{nombrePagina}}</title>
-
 </head>
 
-
-
 <body>
-	<div id="wrapper">
+    <div class="">
+		<!-- Encabezados -->
+			<header id="header" class="alt">
+				<span class="logo"><img src="images/logo.svg" alt="" /></span>
+				<h1>{{nombrePagina}}</h1>
+				{{#if tagline}}
+                    <p class="tagline">{{tagline}}</p>
+                {{/if}}
+			</header>
 
-				<!-- Encabezados -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>{{nombrePagina}}</h1>
-						{{#if tagline}}
-                            <p class="tagline">{{tagline}}</p>
-                        {{/if}}
-					</header>
+        {{#if cerrarSesion}}
+        <div class="">
+            <p>¡Hola {{nombre}}!</p>
+            <a href="/administrar">Administración</a>
+            <a href="/cerrarSesion">Cerrar sesi</a>
+        </div>
+        {{/if}}
+    </div>
 
+    </header>
 
-		<div class="contenido-principal contenedor">
+    <div class="">
         {{#if messages}}
-        <div class="alertas">
+        <div class="">
             {{#mostrarAlertas messages}}
             {{/mostrarAlertas}}
         </div>
@@ -48,10 +51,16 @@
     {{!-- Webpack bundle --}}
     <script src="/dist/bundle.js"></script>
 
-					
+	<!-- Scripts -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.scrollex.min.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/browser.min.js"></script>
+	<script src="/js/breakpoints.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
 
-
-		<!-- Footer -->
+	<!-- Footer -->
 			<footer id="footer">
 						<section>
 							<h2>Una opción para sus ahorros</h2>
@@ -77,8 +86,6 @@
 						</section>
 						<p class="copyright">&copy;2019, <a href="https://www.facebook.com/yosseny.gimena">Gimena Sánchez</a>.</p>
 					</footer>
-
-
 </body>
 
 </html>

@@ -38,12 +38,15 @@ exports.agregarUsuario = async (req, res, next) => {
   const usuario = new Usuario(req.body);
 
 // tratar de almacenar el usuario
-try {
-  await usuario.save();
-} catch (error) {
+  try {
+    await usuario.save();
+    console.log("usuario ha sido almacenado")
+    res.redirect("/iniciarSesion");
+  } 
+  catch (error) {
   // Ingresar el error al arreglo de errores
-  erroresArray.push(error);
-  req.flash("error", erroresArray);
+    erroresArray.push(error);
+    req.flash("error", erroresArray);
 
   // renderizar la página con los errores
   res.render("crearCuenta", {
@@ -51,13 +54,13 @@ try {
     tagline: "¡Comienza a publicar tus cuentas de forma gratuita!",
     messages: req.flash()
   });
-}
+ }
 };
 
 // Mostrar el formulario de inicio de sesión
 exports.formularioInicioSesion = (req, res) => {
 res.render("iniciarSesion", {
-  nombrePagina: "Iniciar sesión en fiannzas"
+  nombrePagina: "Iniciar sesión"
 });
 };
 

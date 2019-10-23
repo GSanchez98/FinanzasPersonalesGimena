@@ -11,7 +11,7 @@ passport.use(
       passwordField: "password"
     },
     async (email, password, done) => {
-      const usuario = await Usuario.findOne({ email });
+      const usuario = await Usuario.findOne({ 'email' : email });
       console.log(usuario);
 
       //   Si el usuario no existe

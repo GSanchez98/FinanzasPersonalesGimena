@@ -10,16 +10,34 @@ const authController = require("../controllers/authController");
 
 module.exports = () => {
   router.get("/", homeController.mostrarbalance);
-  router.get("/cuenta/nueva", cuentaController.formularioNuevaCuenta);
-
-  router.post("/cuenta/nueva", cuentaController.agregarCuenta);
-
+  router.get(
+    "/cuenta/nueva",
+    authController.verificarUsuario,
+    cuentaController.formularioNuevaCuenta
+  );
+  router.post(
+    "/cuenta/nueva",
+    authController.verificarUsuario,
+    cuentaController.agregarCuenta
+  );
   // Mostrar una cuenta
   router.get("/cuenta/:url", cuentaController.mostrarCuenta);
 
 // Editar una cuenta
-router.get("/cuenta/editar/:url", cuentaController.formularioEditarCuenta);
-router.post("/cuenta/editar/:url", cuentaController.editarCuenta);
+router.get(
+  "/cuenta/editar/:url",
+  authController.verificarUsuario,
+  cuentaController.formularioEditarCuenta
+);
+router.post(
+  "/cuenta/editar/:url",
+  authController.verificarUsuario,
+  cuentaController.editarCuenta
+);
+
+// Eliminar una cuenta
+router.delete("/cuenta/eliminar/:id", cuentaController.eliminarCuenta);
+
 
 // Crear un usuario
 router.get("/crearCuenta", usuarioController.formularioCrearCuenta);
@@ -55,7 +73,16 @@ router.post(
  router.get("/iniciarSesion", usuarioController.formularioInicioSesion);
  router.post("/iniciarSesion", authController.autenticarUsuario);
 
- 
+  // Cerrar sesión
+  router.get("/cerrarSesion", authController.cerrarSesion);
+
+  // Administrar cuentas
+  router.get(
+    "/administrar",
+    authController.verificarUsuario,
+    authController.administrarCuentas
+  );
+
 return router;
 };
 
