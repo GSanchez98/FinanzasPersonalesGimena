@@ -1,5 +1,5 @@
 module.exports = {
-  tipoContrato: (selected, options) => {
+  Tcuenta: (selected, options) => {
     return options
       .fn()
       .replace(new RegExp(` value="${selected}"`), '$& selected="selected"');

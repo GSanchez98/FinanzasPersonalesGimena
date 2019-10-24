@@ -37,6 +37,7 @@ exports.formularioNuevaCuenta = (req, res) => {
     res.render("cuenta", {
       nombrePagina: cuenta.nombre,
       cuenta
+
     });
   };
   
