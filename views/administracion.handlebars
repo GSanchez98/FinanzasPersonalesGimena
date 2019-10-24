@@ -1,28 +1,50 @@
-<main class="">
-    <h2>Navegación</h2>
+<main class="is-preload">
+        <section id="administracion" class="main special">
 
-    <div class="">
-        <a href="/editarPerfil" class="">Editar perfil</a>
-        <a href="/cuenta/nueva" class="">Nueva cuenta</a>
-    </div>
+			<div id="wrapper">
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<label><li>Bienvenido (a)  : {{nombre}} </li> </label>
+                        <li><a href="/editarPerfil" class="">Editar perfil</a></li>
+						<li><a href="/cuenta/nueva" class="">Nuevo Registro</a></li>
+                        <li><a href="/cerrarSesion" class="active">Cerrar Sesión</a></li>
 
-    <h2>Tus cuentas</h2>
-    <div class="">
-        {{#if cuentas.length}}
-        {{#each cuentas}}
-        <div class="caja">
-            <h3>{{nombre}}</h3>
-            <p class="puesto">{{monto}}</p>
-        </div>
-        <div class="centrar-vertical caja">
-            <a href="/cuenta/editar/{{url}}" class="">Editar</a>
-        </div>
-        <div class="centrar-vertical caja">
-            <a href="#" data-eliminar="{{id}}" class="">Eliminar</a>
-        </div>
-        {{/each}}
-        {{else}}
-        <p>Aún no tienes cuentas registradas</p>
-        {{/if}}
-    </div>
+					</ul>
+				</nav>		
+
+				<!-- Principal -->
+					<div id="main">
+						<section id="descripcion" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major"><br>
+											<h2>Tus Cuentas</h2>
+										</header>
+
+                                        <div class="">
+                                            {{#if cuentas.length}}
+                                            {{#each cuentas}}
+                                            <div class="caja">
+                                                <h3>Nombre: {{nombre}}</h3>
+                                                <h3>Monto : {{monto}}</h3>
+                                            </div>
+                                            <div class="">
+                                                <a href="/cuenta/editar/{{url}}" class="">Editar</a>
+                                            </div>
+                                            <div class="">
+                                                <a href="#" data-eliminar="{{id}}" class="">Eliminar</a>
+                                            </div>
+                                            {{/each}}
+                                            {{else}}
+                                            <p>Aún no tienes cuentas registradas</p>
+                                            {{/if}}
+                                        </div>
+									</div>
+								</div>
+						</section>
+					</div>
+			</div>
+        </section>
 </main>
+

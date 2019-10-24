@@ -1,28 +1,75 @@
-<main class="contenedor">
+<main class="is-preload">
     <form action="/iniciarSesion" method="post" class="default-form">
         <section id="iniciarSesion" class="main special">
-			<header class="major">
-				<h2>Crear cuenta</h2>
-			</header>
-			<ul class="features">
-				<li>                                        
-					<h3>Correo Electrónico:</h3>
-                    <input name="email" placeholder="Correo Electrónico" type="email" />
 
-                    <h3>Contraseña :</h3>
-                    <input type="password" name="password" placeholder="Contraseña">
+			<div id="wrapper">
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="" class="active">Descripción</a></li>
+
+					</ul>
+				</nav>		
+
+				<!-- Principal -->
+					<div id="main">
+						<section id="descripcion" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>BIENVENIDO A FINANZAS PERSONALES</h2>
+										</header>
+										<p>Selecciona la opcion que deseas realizar.</p>
+										<a href="#inicio" class="button primary">Iniciar sesión</a>
+										<a href="/crearCuenta" class="button primary">Crear nuevo usuario</a>
+									</div>
+									<span class="image"><img src="../../public/images/FP.jpg" alt="" /></span>
+								</div>
+							</section>
+							<!-- Inicio -->
+							<section id="inicio" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<ul class="features">
+											<br><br>
+										</ul>
+									</div>
+								</div>
+
+                		<!-- Inicio -->
+							<section id="inicio" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<ul class="features">
+											
+											<li>    
+
+												<header class="major">
+											<h2>Inicio de sesión</h2>
+										</header>
+										<p>Comienza a administrar tus finanzas de una mejor manera.</p>                                    
+												<h3>Correo Electrónico:</h3>
+												<input name="email" placeholder="Correo Electrónico" type="email" />
+
+												<h3>Contraseña :</h3>
+												<input type="password" name="password" placeholder="Contraseña">
 
 
-					<a href="/crearCuenta">Crea una cuenta</a>
-					<a href="/reestablecerPassword">Olvidé mi contraseña</a>
+												<a href="/reestablecerPassword">Olvidé mi contraseña</a>
 
-				</li>
-			</ul>
-			<footer class="major">
-				<ul class="actions special">
-					<input type="submit" value="Iniciar sesión" class="">
-				</ul>
-			</footer>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<footer class="major">
+									<ul class="actions special">
+										<input type="submit" value="Iniciar sesión" class="">
+									</ul>
+								</footer>
+							</section>
+					</div>
+			</div>
+			
 		</section>
     </form>
 </main>

@@ -1,35 +1,40 @@
-<div class="contenedor">
-    <div class="">
-        <p class="">Nombre de la cuenta: </p>
-        <p class="">{{cuenta.nombre}}</p>
-    </div>
+<!-- Principal -->
+<div id="main">
 
-    <div class="">
-        <p class="">Monto: </p>
-        <p class="">{{cuenta.monto}}</p>
-    </div>
+    <!-- Descripcion -->
+		<section id="" class="main">
+			<div class="spotlight">
+				<div class="content">
+                    <ul class="features">
+                       <header class="major">
+						<h2>Información general sobre el registro : {{cuenta.nombre}}</h2>
+					    </header>
+                    </ul>
+                    <div class="major">
+                        <b>Nombre de la cuenta</b>                  :&nbsp;&nbsp;{{cuenta.nombre}}<br>
+                        <b>Monto</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{{cuenta.monto}}<br>
+                        <b>Tipo</b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;           :&nbsp;&nbsp;{{cuenta.tipo}}<br>
+                        <b>Descripción</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               :&nbsp;&nbsp;{{{cuenta.descripcion}}}<br>
+                    </div>
 
-    <div class="">
-        <p class="">Tipo :</p>
-        <p class="">{{cuenta.tipo}}</p>
-    </div>
+                    {{!-- Editar la cuenta --}}
+                    <a href= class=""></a>
+                    <a href="/cuenta/editar/{{cuenta.url}}" class="button primary">Editar la información del registro</a>
+                
 
-    <div class="">
-        <p class="">Descripción :</p>
-        <p class="">{{cuenta.descripcion}}</p>
-    </div>
-</div>
-
-<div class="">
-    <main class="">
-        <h2>Descripción de la cuenta</h2>
-
-        <div class="">
-            {{{cuenta.descripcion}}}
-        </div>
-
-        {{!-- Editar la cuenta --}}
-        <a href="/cuenta/editar/{{cuenta.url}}" class="">Editar cuenta</a>
-    </main>
-
+                </div>
+			</div>
+		</section>
 </div>

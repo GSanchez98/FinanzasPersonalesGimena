@@ -1,23 +1,32 @@
-<main class="">
-    <h2>Lista de cuentas</h2>
+<!-- Principal -->
+<div id="main">
 
-    {{#each cuentas}}
-    <div class="">
-        <div class="">
-            <h3>{{nombre}}</h3>
-        </div>
-        <div class="">
-            <h3>{{Tipo}}</h3>
-        </div>
-        <div class="">
-            <h3>{{monto}}</h3>
-        </div>
+    <!-- Descripcion -->
+		<section id="" class="main">
+			<div class="spotlight">
+				<div class="content">
+                    <ul class="features">
+                       <header class="major">
+						<h2>Lista de cuentas o registros financieros</h2>
+					    </header>
+                    </ul>
 
-        <div class="">
-            <a href="/cuenta/{{url}}" class="">Más información</a>
-        </div>
-    </div>
-    {{/each}}
+{{#each cuentas}}
+                            <div class="">
+                                <div class="major">
+                                    <h3>Registro                 : {{nombre}}</h3>
+                                    <h3>Monto  &nbsp;&nbsp;      : {{monto}}</h3>
+                                    <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
+                                </div>
+                                <br><br>
+                            </div>
+                            {{/each}}
 	
-</main>
+
+				</div>
+			</div>
+		</section>
+</div>
+    
+
 

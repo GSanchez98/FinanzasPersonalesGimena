@@ -3228,6 +3228,11 @@ input, select, textarea {
 		text-align: center;
 	}
 
+		#nav label{
+			color: #636363;
+			font-size: 220%;
+		}
+
 		#nav input, #nav select, #nav textarea {
 			color: #636363;
 		}
