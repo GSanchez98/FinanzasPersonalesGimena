@@ -1999,6 +1999,10 @@ input, select, textarea {
 		margin: 0 0 1em 0;
 	}
 
+		label.major{
+			text-align: left;
+		}
+
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -2631,6 +2635,10 @@ input, select, textarea {
 			}
 
 /* Section/Article */
+
+	div.centrad{
+		text-align: center;
+	}
 
 	section.special, article.special {
 		text-align: center;

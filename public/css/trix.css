@@ -11,7 +11,7 @@ trix-editor {
   min-height: 5em;
   outline: none; }
 trix-toolbar * {
-  box-sizing: border-box; }
+  box-sizing: content-box; }
 trix-toolbar .trix-button-row {
   display: flex;
   flex-wrap: nowrap;
@@ -296,7 +296,7 @@ trix-editor .attachment__metadata {
   trix-editor .attachment__metadata .attachment__size {
     margin-left: 0.2em;
     white-space: nowrap; }
-@charset "UTF-8";
+
 .trix-content {
   line-height: 1.5; }
   .trix-content * {

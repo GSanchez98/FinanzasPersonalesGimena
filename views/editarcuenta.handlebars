@@ -8,7 +8,7 @@
 					<ul>
 						<label>Bienvenido : {{nombre}} </label>
                         <li><a href="#descripcion" class="">Ir a administración</a></li>
-						<li><a href="#descripcion" class="active">Cerrar Sesión</a></li>
+						<li><a href="/cerrarSesion" class="active">Cerrar Sesión</a></li>
 					</ul>
 				</nav>		
 
@@ -18,48 +18,46 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>BIENVENIDO A FINANZAS PERSONALES</h2>
+											<h2></h2>
 										</header>
-
-
-
-
 <main class="">
 
         <h3>Nuevo Registro</h3>
 
-        <div class="campo">
-            <label for="nombre">Nombre</label>
+        <div class="major">
+            <label class="major" for="nombre">Nombre :</label>
             <input type="text" name="nombre" placeholder="Salario, Renta, Supermercado, Ventas, etc..."
                 value={{cuenta.nombre}}>
-        </div>
+        </div><br>
 
-        <div class="campo">
-            <label for="monto">Monto (LPS):</label>
+        <div class="major">
+            <label class="major" for="monto">Monto (LPS) :</label>
             <input type="text" name="monto" placeholder="L. 1200" 
                 value="{{cuenta.monto}}">
-        </div>
+        </div><br>
 
-        <div class="campo">
-            <label for="tipo">Tipo de cuenta</label>
+        <div class="major">
+            <label class="major" for="tipo">Tipo de cuenta :</label>
             <select name="tipo">
                 <option value="" disabled selected>Selecciona una opción</option>
                 <option value="ingreso">Ingreso</option>
                 <option value="egreso">Egreso</option>
             </select>
-        </div>
+        </div><br>
 
-        <h3>Descripción de la cuenta</h3>
-        <div class="campo">
+        <div class="major">
             {{!-- Implementar un WYSIWYG --}}
-            <label>Descripción</label>
+            <label class="major" for="tipo">Descripción :</label>
             <input type="hidden" name="descripcion" id="x" value="{{{cuenta.descripcion}}}">
-            <trix-editor input="x"></trix-editor>
-        </div>
+            <trix-editor class="major" input="x"></trix-editor>
+        </div><br><br>
 
 
-        <div class="campo">
+        <div class="centrad">
             <input type="submit" value="Guardar Cambios" class="btn btn-azul">
         </div>
+
+         </div>
+       
     </form>
 </main>
