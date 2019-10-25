@@ -96,7 +96,7 @@ exports.editarPerfil = async (req, res) => {
   req.flash("correcto", ["Cambios almacenados correctamente"]);
 
   // Redireccionar
-  res.redirect("/administrar");
+  res.redirect("/");
 };
 
 // Subir una imagen al servidor

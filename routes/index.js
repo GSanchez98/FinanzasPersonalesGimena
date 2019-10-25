@@ -9,7 +9,11 @@ const authController = require("../controllers/authController");
 
 
 module.exports = () => {
-  router.get("/", homeController.mostrarbalance);
+  router.get("/", authController.autenticarUsuario);
+  router.get("/home", 
+    authController.verificarUsuario,
+    homeController.mostrarbalance 
+    );
   router.get(
     "/cuenta/nueva",
     authController.verificarUsuario,

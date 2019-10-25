@@ -4,7 +4,7 @@ const Cuenta = mongoose.model("Cuenta");
 
 exports.autenticarUsuario = passport.authenticate("local", {
   
-  successRedirect: "/administrar",
+  successRedirect: "/home",
   failureRedirect: "/iniciarSesion",
   failureFlash: true,
   badRequestMessage: ["Debes ingresar ambos campos"]
@@ -42,7 +42,9 @@ exports.cerrarSesion = (req, res) => {
 exports.verificarUsuario = (req, res, next) => {
   // Retorna true si el usuario ya realizó la autenticación
   if (req.isAuthenticated()) {
-    next();
+    console.log(req.body);
+    
+    next();  
   }
   else
   {
