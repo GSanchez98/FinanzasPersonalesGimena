@@ -1,40 +1,70 @@
+<main class="is-preload">
+     <form action="/cuenta/nueva" method="post" class="default-form">
+        <section id="nuevaCuenta" class="main special">
+
+			<div id="wrapper">
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+                        <label>Bienvenido (a) : {{nombre}} </label>
+					</ul>
+				</nav>		
+
+				<!-- Principal -->
+					<div id="main">
+						<section id="descripcion" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2></h2>
+										</header>
+                                        <h3>Nuevo Registro</h3>
+                                            <div class="major">
+                                                <label class="major" for="nombre">Nombre de la cuenta:</label>
+                                                <input type="text" name="nombre" placeholder="Salario, Renta, Supermercado, Ventas, etc...">
+                                            </div><br>
+
+                                            <div class="major">
+                                                <label class="major" for="salario">Monto (LPS):</label>
+                                                <input type="text" name="monto" placeholder="L. 1200">
+                                            </div><br>
+
+                                            <div class="major">
+                                                <label class="major" for="Tcuenta">Tipo de cuenta</label>
+                                                <select name="Tcuenta">
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="ingreso">Ingreso</option>
+                                                    <option value="egreso">Egreso</option>
+                                                </select>
+                                            </div><br>
+
+                                            <div class="campo">
+                                                {{!-- Implementar un WYSIWYG --}}
+                                                <label class="major">Descripción</label>
+                                                <input type="hidden" name="descripcion" id="x">
+                                                <trix-editor input="x"></trix-editor>
+                                            </div>
+                                         <footer class="major">
+                                            <ul class="actions special">
+                                                <input type="submit" class="button primary" value="Guardar Registro" >
+                                                <input type="submit" class="button primary" value="Cancelar" href="/" >
+                                            </ul>
+                                        </footer>
+									</div>
+								</div>
+						</section>
+					</div>
+			</div>
+        </section>
+     </form>
+</main>
+
+
+
 <main class="contenedor">
-    <form action="/cuenta/nueva" method="post" class="default-form">
-        <h3>Nuevo Registro</h3>
-
-        <div class="campo">
-            <label for="nombre">Nombre de la cuenta:</label>
-            <input type="text" name="nombre" placeholder="Salario, Renta, Supermercado, Ventas, etc...">
-        </div>
-
-        <div class="campo">
-            <label for="salario">Monto (LPS):</label>
-            <input type="text" name="monto" placeholder="L. 1200">
-        </div>
-
-        <div class="campo">
-            <label for="Tcuenta">Tipo de cuenta</label>
-            <select name="Tcuenta">
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="ingreso">Ingreso</option>
-                <option value="egreso">Egreso</option>
-            </select>
-        </div>
-
- <h3>Descripción de la cuenta</h3>
-        <div class="campo">
-            {{!-- Implementar un WYSIWYG --}}
-            <label>Descripción</label>
-            <input type="hidden" name="descripcion" id="x">
-            <trix-editor input="x"></trix-editor>
-        </div>
-
-        <footer class="major">
-				<ul class="actions special">
-                    <input type="submit" value="Guardar Registro" >
-                    <input type="submit" value="Cancelar" href="/" >
-				</ul>
-			</footer>
+   
+        
+       
         
     </form>
 </main>

@@ -83,6 +83,19 @@ router.post(
     authController.administrarCuentas
   );
 
+  // Editar el perfil del usuario
+  router.get(
+    "/editarPerfil",
+    authController.verificarUsuario,
+    usuarioController.formularioEditarPerfil
+  );
+  router.post(
+    "/editarPerfil",
+    authController.verificarUsuario,
+    usuarioController.subirImagen,
+    usuarioController.editarPerfil
+  );
+
 return router;
 };
 

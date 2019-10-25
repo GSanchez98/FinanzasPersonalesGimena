@@ -199,6 +199,9 @@ input, select, textarea {
 		margin: 0 0 0.7em 0;
 		letter-spacing: -0.025em;
 	}
+	h3.gmn{
+		text-align: left;
+	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
@@ -2003,6 +2006,12 @@ input, select, textarea {
 			text-align: left;
 		}
 
+		input.major{
+			align-content: left;
+		}
+
+	
+
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -2638,6 +2647,9 @@ input, select, textarea {
 
 	div.centrad{
 		text-align: center;
+	}
+	section.centrad, article.centrad {
+		text-align: left;
 	}
 
 	section.special, article.special {

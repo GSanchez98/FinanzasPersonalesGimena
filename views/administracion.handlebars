@@ -1,5 +1,5 @@
 <main class="is-preload">
-        <section id="administracion" class="main special">
+        <section id="administracion" class="main centrad">
 
 			<div id="wrapper">
 			<!-- Nav -->
@@ -22,21 +22,16 @@
 											<h2>Tus Cuentas</h2>
 										</header>
 
-                                        
+                                        <div class="gmn">
                                             {{#if cuentas.length}}
                                             {{#each cuentas}}
-                                            <div class="">
-                                                <div class="major">
                                                 <h3>Registro                 : {{nombre}}</h3>
                                                 <h3>Monto  &nbsp;&nbsp;      : {{monto}}</h3>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <a href="/cuenta/editar/{{url}}" class="">Editar</a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#" data-eliminar="{{id}}" class="">Eliminar</a>
-                                            </div>
+
+                                            <a href="/cuenta/editar/{{url}}"class="button primary">Editar Registro</a>
+                                            <a href="#" data-eliminar="{{id}}" class="button primary">Eliminar Registro</a><br><br>
+                                            
+                                            
                                             {{/each}}
                                             {{else}}
                                             <p>Aún no tienes cuentas registradas</p>

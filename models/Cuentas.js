@@ -11,7 +11,7 @@ const cuentaSchema = new mongoose.Schema({
       trim: true
     },
     monto: {
-      type: String,
+      type: Number,
       default: 0,
       trim: true
     },
