@@ -34,7 +34,18 @@
 										<header class="major"><br>
 											<h2>Ingresos</h2>
 										</header>
-
+										{{#each listaingreso}}
+										
+                                        <div class="">
+                                            <div class="major">
+                                                <h3>Registro                 : {{nombre}}</h3>
+                                                <h3>Monto  &nbsp;&nbsp;      : {{monto}}</h3>
+                                                <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
+                                            </div>
+                                            <br><br>
+                                        </div>
+										
+                                        {{/each}}   
                                         </div>
 								</div>
 						</section>
@@ -45,7 +56,18 @@
 										<header class="major"><br>
 											<h2>Egresos</h2>
 										</header>
-
+											{{#each listaegreso}}
+										
+                                        <div class="">
+                                            <div class="major">
+                                                <h3>Registro                 : {{nombre}}</h3>
+                                                <h3>Monto  &nbsp;&nbsp;      : {{monto}}</h3>
+                                                <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
+                                            </div>
+                                            <br><br>
+                                        </div>
+										
+                                        {{/each}}
                                         </div>
 								</div>
 						</section>
@@ -64,16 +86,7 @@
         </section>
 </main>
                              
-       {{#each cuentas}}
-                                        <div class="">
-                                            <div class="major">
-                                                <h3>Registro                 : {{nombre}}</h3>
-                                                <h3>Monto  &nbsp;&nbsp;      : {{monto}}</h3>
-                                                <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
-                                            </div>
-                                            <br><br>
-                                        </div>
-                                        {{/each}}                      
+                   
                             
 	
 

@@ -8,6 +8,7 @@
     "connect-mongo": "^3.0.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.2.0",
+    "ember-truth-helpers": "^2.1.0",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "mongoose": "^5.7.5",

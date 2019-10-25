@@ -17,7 +17,17 @@ exports.mostrarbalance = async (req, res, next) => {
       }
     }
   ]);
-  console.log(cuentastipo);
+  const listaingreso = await Cuenta.aggregate([
+    {
+      $match:{ autor: req.user._id, tipo: 'ingreso'}
+    }
+  ]);
+  const listaegreso = await Cuenta.aggregate([
+    {
+      $match:{ autor: req.user._id, tipo: 'egreso'}
+    }
+  ]);
+  console.log(listaingreso);
   var ingreso=0;
   var egreso=0;
   cuentastipo.forEach(function(ele){
@@ -41,9 +51,12 @@ exports.mostrarbalance = async (req, res, next) => {
     descripcion:"Le ayudamos a gestionar su economía personal compruebe aquí el estado de sus cuentas, empiece a hacer el presupuesto y organice sus deudas.",
     crearCuenta: "Conozca los pasos a seguir para evitar sorpresas al invertir sus ahorros: defina su perfil y vigile sus inversiones.",
     inicioSesion: "!Accede ya! y continua manejando de manera eficiente y eficaz tus finanzas",
+   
     cuentas,
     balance,
     ingreso,
-    egreso
+    egreso,
+    listaegreso,
+    listaingreso
   });
 };
