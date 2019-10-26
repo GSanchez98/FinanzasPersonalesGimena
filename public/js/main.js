@@ -8,14 +8,6 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 document.addEventListener("DOMContentLoaded", () => {
-
-	// Limpiar las alertas
-	let alertas = document.querySelector(".alertas");
-  
-	if (alertas) {
-	  limpiarAlertas(alertas);
-	}
-  
 	// Eliminar cuentas
 	const cuentasListado = document.querySelector(".panel-administracion");
   
