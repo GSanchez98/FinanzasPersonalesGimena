@@ -3,6 +3,19 @@
         <section id="nuevaCuenta" class="main special">
 
 			<div id="wrapper">
+                <!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="/cerrarSesion" class="fas fa-sign-out-alt"> Cerrar Sesión</a></li>
+                        <li><a href="/administrar" class="fas fa-user-tie"> Administración</a></li>
+						<li><a href="/home" class="fas fa-hand-point-left"> Regresar al inicio</a></li>
+
+					</ul>
+				</nav>	
+
+				<div id="main">
+					<br>
+				</div>
 			<!-- Nav -->
 				<nav id="nav">
 					<ul>
@@ -30,15 +43,15 @@
                                             </div><br>
 
                                             <div class="major">
-                                                <label class="major" for="Tcuenta">Tipo de cuenta</label>
-                                                <select name="Tcuenta">
+                                                <label class="major" for="tipo">Tipo de cuenta</label>
+                                                <select name="tipo">
                                                     <option value="" disabled selected>Selecciona una opción</option>
                                                     <option value="ingreso">Ingreso</option>
                                                     <option value="egreso">Egreso</option>
                                                 </select>
                                             </div><br>
 
-                                            <div class="campo">
+                                            <div class="major">
                                                 {{!-- Implementar un WYSIWYG --}}
                                                 <label class="major">Descripción</label>
                                                 <input type="hidden" name="descripcion" id="x">
@@ -47,7 +60,6 @@
                                          <footer class="major">
                                             <ul class="actions special">
                                                 <input type="submit" class="button primary" value="Guardar Registro" >
-                                                <input type="submit" class="button primary" value="Cancelar" href="/" >
                                             </ul>
                                         </footer>
 									</div>

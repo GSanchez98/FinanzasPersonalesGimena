@@ -2646,7 +2646,7 @@ input, select, textarea {
 /* Section/Article */
 
 	div.centrad{
-		text-align: center;
+		text-align: left;
 	}
 	section.centrad, article.centrad {
 		text-align: left;

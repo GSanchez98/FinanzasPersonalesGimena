@@ -1,45 +1,74 @@
 <main class="is-preload">
-        <section id="administracion" class="main special">
+
+        <section id="administracion" class="main gmn">
 
 			<div id="wrapper">
+
 			<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<label><li>Bienvenido (a)  : {{nombre}} </li> </label>
-                        <li><a href="#ingreso" class=""><b>Ingresos    :</b>   L. {{ingreso}}</a></li>
-                        <li><a href="#egreso"  class=""><b>Egresos     :</b>   L. {{egreso}}</a></li>
-                        <li><a href="#balance" class="active"><b>Saldo total :</b>   L. {{balance}}</a></li>
-
+						<li><a href="/cerrarSesion" class="fas fa-sign-out-alt"> Cerrar Sesión</a></li>
+						<li><a href="/administrar" class="fas fa-user-tie"> Administración</a></li>
 
 					</ul>
-				</nav>		
+				</nav>	
+
+				<div id="main">
+					<br>
+				</div>
+
+				<div id="main">
+						<nav id="nav"class="">
+									<ul>
+										<label><li>Bienvenido (a)  : {{nombre}} </li> </label>
+										<li><a href="#ingreso" class=""><b>Ingresos    :</b>   L. {{ingreso}}</a></li>
+                        				<li><a href="#egreso"  class=""><b>Egresos     :</b>   L. {{egreso}}</a></li>
+                        				<li><a href="#balance" class="active"><b>Saldo total :</b>   L. {{balance}}</a></li>
+									</ul>
+								</nav>	
+					</div>
 
 				<!-- Principal -->
 					<div id="main">
-						<section id="descripcion" class="main">
+						<section id="descripcion" class="main special">
 								<div class="spotlight">
 									<div class="content">
 										<header class="major"><br><br><br><br>
 											<h2>Para ver mas detalles</h2>
 										</header>
-
                                         <p>Selecciona una de las opciones presentadas en la parte superior y se te desplegaran los registros asignados</p>
-                                        </div>
-								</div>
+										<footer class="major">
+										<ul class="actions special">
+											<li><a href="/cuenta/nueva" class="button primary" >Agregar un nuevo registro</a></li>
+										</ul>
+										</footer>
+                                    </div>
+								</div>		
 						</section>
+					</div>
 
+					<div id="main">
+						<nav id="nav"class="">
+									<ul>
+										<label><li>Ingresos : L. {{ingreso}} </li> </label>
+										<li><a href="#administracion" class="active"><b>Ir al inicio</b></a></li>
+
+
+									</ul>
+								</nav>	
                         <section id="ingreso" class="main">
+							<!-- Nav -->
+									
 								<div class="spotlight">
 									<div class="content">
-										<header class="major"><br>
-											<h2>Ingresos</h2>
-										</header>
+										<br><br><br><br><br>
+
 										{{#each listaingreso}}
 										
                                         <div class="">
                                             <div class="major">
                                                 <h3>Registro                 : {{nombre}}</h3>
-                                                <h3>Monto  &nbsp;&nbsp;      : {{monto}}</h3>
+                                                <h3>Monto  &nbsp;&nbsp;      : L. {{monto}}</h3>
                                                 <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
                                             </div>
                                             <br><br>
@@ -49,19 +78,29 @@
                                         </div>
 								</div>
 						</section>
+					</div>
+
+					<div id="main">
+						<nav id="nav"class="">
+									<ul>
+										<label><li>Egresos : L. {{egreso}} </li> </label>
+										<li><a href="#administracion" class="active"><b>Ir al inicio</b></a></li>
+
+
+									</ul>
+								</nav>	
 
                         <section id="egreso" class="main">
 								<div class="spotlight">
 									<div class="content">
-										<header class="major"><br>
-											<h2>Egresos</h2>
-										</header>
+										<br><br><br><br><br>
+
 											{{#each listaegreso}}
 										
                                         <div class="">
                                             <div class="major">
                                                 <h3>Registro                 : {{nombre}}</h3>
-                                                <h3>Monto  &nbsp;&nbsp;      : {{monto}}</h3>
+                                                <h3>Monto  &nbsp;&nbsp;      : L. {{monto}}</h3>
                                                 <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
                                             </div>
                                             <br><br>
@@ -71,29 +110,9 @@
                                         </div>
 								</div>
 						</section>
+					
 					</div>
 			</div>
         </section>
 </main>
                                        
-
-
-									</div>
-								</div>
-						</section>
-					</div>
-			</div>
-        </section>
-</main>
-                             
-                   
-                            
-	
-
-				</div>
-			</div>
-		</section>
-</div>
-    
-
-

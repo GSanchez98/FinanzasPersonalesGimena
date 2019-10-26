@@ -18,6 +18,7 @@ exports.formularioNuevaCuenta = (req, res) => {
     // Agregrando el usuario que crea la cuenta
     cuenta.autor = req.user._id;
   
+  
     // Almacenar en la base de datos
     const nuevaCuenta = await cuenta.save();
 
@@ -30,14 +31,15 @@ exports.formularioNuevaCuenta = (req, res) => {
   // Mostrar una cuenta
   exports.mostrarCuenta = async (req, res, next) => {
     const cuenta = await Cuenta.findOne({ url: req.params.url });
-  
+    const cuentita = await Cuenta.find({ autor: req.user._id });
     // Si no hay resultados
     if (!cuenta) return next();
   
     res.render("cuenta", {
       nombrePagina: cuenta.nombre,
-      cuenta
-
+      nombre: req.user.nombre,
+      cuenta,
+      cuentita
     });
   };
   
