@@ -31,7 +31,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "layout"
+    defaultLayout: "layout",
+    helpers: require("./helpers/handlebars")
   })
 );
 

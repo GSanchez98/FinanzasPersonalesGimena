@@ -7,16 +7,18 @@ const shortid = require("shortid");
 const cuentaSchema = new mongoose.Schema({
     nombre: {
       type: String,
-      required: "El nombre de la cuenta es requerido",
+      required:["El nombre de la cuenta es requerido"],
       trim: true
     },
     monto: {
       type: Number,
       default: 0,
+      required:"El monto de la cuenta es requerido",
       trim: true
     },
     tipo: {
       type: String,
+      required:"El tipo de cuenta es requerido",
       trim: true
     },
     descripcion: {

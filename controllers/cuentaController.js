@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Cuenta = mongoose.model("Cuenta");
+const { validationResult } = require("express-validator");
 
 exports.formularioNuevaCuenta = (req, res) => {
     res.render("nuevaCuenta", {
@@ -11,27 +12,54 @@ exports.formularioNuevaCuenta = (req, res) => {
   };
   
   // Agregar una nueva cuenta a la base de datos
-  exports.agregarCuenta = async (req, res) => {
+  exports.agregarCuenta = async (req, res, next) => {
+
+    // Verificar que no existan errores de validación
+    const errores = validationResult(req);
+    const erroresArray = [];
+
+     // Si hay errores
+    if (!errores.isEmpty()) {
+      errores.array().map(error => erroresArray.push(error.msg));
+
+      // Enviar los errores de regreso al usuario
+      req.flash("error", erroresArray);
+
+      res.render("nuevaCuenta", {
+        nombrePagina: "Nueva cuenta",
+        tagline: "¡Llena el formulario y publica una nueva cuenta!",
+        messages: req.flash()
+      });
+      return;
+    }
  
     const cuenta = new Cuenta(req.body);
 
     // Agregrando el usuario que crea la cuenta
     cuenta.autor = req.user._id;
-  
-  
-    // Almacenar en la base de datos
-    const nuevaCuenta = await cuenta.save();
 
-    // Redireccionar
-    res.redirect(`/cuenta/${nuevaCuenta.url}`);
+    try{
+      await cuenta.save();
+      res.redirect(`/cuenta/${nuevaCuenta.url}`);
+    } catch(error){
+      // Ingresar el error al arreglo de errores
+    erroresArray.push(error);
+    req.flash("error", erroresArray);
 
- 
-  };
+  // renderizar la página con los errores
+  res.render("nuevaCuenta", {
+    nombrePagina: "Nueva Cuenta",
+    tagline: "¡Llena el formulario y publica una nueva cuenta!",
+    messages: req.flash()
+  });
+ }
+};
+
+   
   
   // Mostrar una cuenta
   exports.mostrarCuenta = async (req, res, next) => {
     const cuenta = await Cuenta.findOne({ url: req.params.url });
-    const cuentita = await Cuenta.find({ autor: req.user._id });
     // Si no hay resultados
     if (!cuenta) return next();
   
@@ -39,7 +67,6 @@ exports.formularioNuevaCuenta = (req, res) => {
       nombrePagina: cuenta.nombre,
       nombre: req.user.nombre,
       cuenta,
-      cuentita
     });
   };
   
