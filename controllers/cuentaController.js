@@ -40,7 +40,7 @@ exports.formularioNuevaCuenta = (req, res) => {
 
     try{
       await cuenta.save();
-      res.redirect(`/cuenta/${nuevaCuenta.url}`);
+      res.redirect("/home");
     } catch(error){
       // Ingresar el error al arreglo de errores
     erroresArray.push(error);
