@@ -100,6 +100,21 @@ router.post(
     usuarioController.editarPerfil
   );
 
+    // Reestablecer la contraseña del usuario
+    router.get(
+      "/reestablecerPassword",
+      authController.formularioReestablecerPassword
+    );
+    router.post("/reestablecerPassword", authController.enviarToken);
+    router.get(
+      "/reestablecerPassword/:token",
+      authController.formularioNuevoPassword
+    );
+    router.post(
+      "/reestablecerPassword/:token",
+      authController.almacenarNuevaPassword
+    );
+
 return router;
 };
 
