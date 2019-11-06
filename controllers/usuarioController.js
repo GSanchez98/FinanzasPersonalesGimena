@@ -70,7 +70,7 @@ res.render("iniciarSesion", {
 // Mostrar el formulario de editar perfil del usuario
 exports.formularioEditarPerfil = (req, res) => {
   res.render("editarPerfil", {
-    nombrePagina: "Edita el perfil de tu usuario en DevFinder",
+    nombrePagina: "Edita el perfil de tu usuario en finanzas personales",
     usuario: req.user,
     cerrarSesion: true,
     nombre: req.user.nombre
@@ -90,14 +90,20 @@ exports.editarPerfil = async (req, res) => {
     usuario.password = req.body.password;
   }
 
-  // Guardar los cambios
-  await usuario.save();
+ // Verificar si el usuario agrega una imagen
+ if (req.file) {
+  usuario.imagen = req.file.filename;
+}
 
-  req.flash("correcto", ["Cambios almacenados correctamente"]);
+// Guardar los cambios
+await usuario.save();
 
-  // Redireccionar
-  res.redirect("/");
+req.flash("correcto", ["Cambios almacenados correctamente"]);
+
+// Redireccionar
+res.redirect("/administrar");
 };
+
 
 // Subir una imagen al servidor
 exports.subirImagen = (req, res, next) => {
