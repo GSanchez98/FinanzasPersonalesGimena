@@ -19,7 +19,8 @@
 
 				<div id="main">
 						<nav id="nav"class="">
-									<ul>
+									<ul>           
+										<img src="/images/profile.png">									           
 										<label><li>Bienvenido (a)  : {{nombre}} </li></label>
 										<li><a href="#ingreso" class=""><b>Ingresos    :</b>   L. {{ingreso}}</a></li>
                         				<li><a href="#egreso"  class=""><b>Egresos     :</b>   L. {{egreso}}</a></li>
@@ -33,7 +34,7 @@
 						<section id="descripcion" class="main special">
 								<div class="spotlight">
 									<div class="content">
-										<header class="major"><br><br><br><br>
+										<header class="major"><br><br><br><br><br><br><br><br><br>
 											<h2>Para ver mas detalles</h2>
 										</header>
                                         <p>Selecciona una de las opciones presentadas en la parte superior y se te desplegaran los registros asignados</p>
@@ -63,18 +64,21 @@
 									<div class="content">
 										<br><br><br><br><br>
 
-										{{#each listaingreso}}
-										
-                                        <div class="">
-                                            <div class="major">
-                                                <h3>Registro                 : {{nombre}}</h3>
-                                                <h3>Monto  &nbsp;&nbsp;      : L. {{monto}}</h3>
-                                                <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
-                                            </div>
-                                            <br><br>
-                                        </div>
-										
-                                        {{/each}}   
+										<!-- Para que cuando no se tengan registros nos muestre un mensaje -->
+										{{#if listaingreso.length}}
+                                            {{#each listaingreso}}
+                                                 <div class="">
+													<div class="major">
+														<h3>Registro                 : {{nombre}}</h3>
+														<h3>Monto  &nbsp;&nbsp;      : L. {{monto}}</h3>
+														<a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
+													</div>
+													<br><br>
+												</div>
+                                            {{/each}}
+                                            {{else}}
+                                            <br><br><p>Aún no tienes cuentas de ingresos registradas</p>
+                                            {{/if}}
                                         </div>
 								</div>
 						</section>
@@ -95,18 +99,22 @@
 									<div class="content">
 										<br><br><br><br><br>
 
-											{{#each listaegreso}}
-										
-                                        <div class="">
-                                            <div class="major">
-                                                <h3>Registro                 : {{nombre}}</h3>
-                                                <h3>Monto  &nbsp;&nbsp;      : L. {{monto}}</h3>
-                                                <a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
-                                            </div>
-                                            <br><br>
-                                        </div>
-										
-                                        {{/each}}
+										{{#if listaegreso.length}}
+                                            {{#each listaegreso}}
+												<div class="">
+													<div class="major">
+														<h3>Registro                 : {{nombre}}</h3>
+														<h3>Monto  &nbsp;&nbsp;      : L. {{monto}}</h3>
+														<a href="/cuenta/{{url}}" class="button primary">Ver toda la información del registro</a>
+													</div>
+													<br><br>
+												</div>											
+											{{/each}}
+                                            {{else}}
+                                            <br><br><p>Aún no tienes cuentas de egresos registradas</p>
+                                            {{/if}}
+
+											
                                         </div>
 								</div>
 						</section>

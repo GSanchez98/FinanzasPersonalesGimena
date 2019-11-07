@@ -36,11 +36,14 @@
 
     </header>
 
-    <div class="main">
+    <div class="is-preload">
         {{#if messages}}
-        <div class="alerta">
-            {{#mostrarAlertas messages}}
-            {{/mostrarAlertas}}
+        <div id="wrapper">
+            <h2 align="center" 
+			style="border: ridge 
+			#ffffff 1px;"><b>
+			{{#mostrarAlertas messages}}
+            {{/mostrarAlertas}}</b></h2>
         </div>
         {{/if}}
         {{{body}}}

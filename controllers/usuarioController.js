@@ -135,7 +135,7 @@ exports.subirImagen = (req, res, next) => {
 const configuracionMulter = {
   // Tamaño máximo del archivo en bytes
   limits: {
-    fileSize: 200000
+    fileSize: 400000
   },
   // Dónde se almacena la imagen
   storage: (fileStorage = multer.diskStorage({

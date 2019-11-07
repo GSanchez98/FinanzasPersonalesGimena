@@ -10,7 +10,10 @@
 						<h2>Finanzas Personales</h2>
 					</header>
 					<form action="/crearCuenta" method="post" class="default-form">
-                       
+                       <div class="major">
+                            <label class="major" for="imagen">Imagen de perfil:</label>
+                            <input class="major" type="file" name="imagen">
+                        </div><br><br>
                         <div class="major">
                             <label for="nombre">Nombre</label>
                             <input type="text" name="nombre" placeholder="Yosseny Gimena Sánchez Cabrera">
@@ -27,12 +30,7 @@
                             <label for="confirmpassword">Repetir la contraseña</label>
                             <input type="password" name="confirmpassword" placeholder="Vuelve a introducir tu contraseña">
                         </div><br>
-                         <div class="major">
-                            <label class="major" for="imagen">Imagen de perfil:</label>
-                            <input class="major" type="file" name="imagen">
-                            <img src="/public/uploads/perfiles/{{usuario.imagen}}">
-                        </div>
-                        <br><br>
+                         
 
                         <footer class="major">
 							<ul class="actions special">
