@@ -1,0 +1,60 @@
+<main class="is-preload">
+    <form action="/iniciarSesion" method="post" class="default-form">
+        <section id="iniciarSesion" class="main special">
+
+			<div id="wrapper">
+                      <!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="/cerrarSesion" class="fas fa-sign-out-alt"> Cerrar Sesión</a></li>
+						<li><a href="/administrar" class="fas fa-user-tie"> Administración</a></li>
+                                          <li><a href="/home" class="fas fa-hand-point-left"> Regresar al inicio</a></li>
+
+					</ul>
+				</nav>	
+
+				<div id="main">
+					<br>
+				</div>    
+
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+                                   <label>Bienvenido : {{nombre}} </label>
+					<li><a>Información general : <b>{{cuenta.nombre}}</b></a></li>
+ 					</ul>
+				</nav>		
+
+				<!-- Principal -->
+					<div id="main">
+					       <section id="descripcion" class="main">
+							<div class="spotlight">
+								<div class="content">
+                                                               <div class="major centrad">
+                                                                      <br><br>
+                                                               <b>Nombre de la cuenta</b>                  :&nbsp;&nbsp;{{cuenta.nombre}}<br>
+                                                               <b>Monto</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{{cuenta.monto}}<br>
+                                                               <b>Tipo</b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;           :&nbsp;&nbsp;{{cuenta.tipo}}<br>
+                                                               <b>Descripción</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                      :&nbsp;&nbsp;{{{cuenta.descripcion}}}<br>
+                                                               </div>
+                                                               <a href="/cuenta/editar/{{cuenta.url}}" class="button primary">Editar la información del registro</a>
+								</div>
+							</div>
+						</section>
+					</div>
+			</div>
+        </section>
+    </form>
+</main>

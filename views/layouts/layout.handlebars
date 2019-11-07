@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{!-- Google font Rubik 400, 700, 900 --}}
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900&display=swap" rel="stylesheet">
+    {{!-- Hoja de estilos personalizada  --}}
+    <link rel="stylesheet" href="/css/main.css">
+    {{!-- Hoja de estilos para trix (WYSIWYG) --}}
+    <link rel="stylesheet" href="/css/trix.css">
+    <title>{{nombrePagina}}</title>
+</head>
+
+<body>
+    <div class="major">
+		<!-- Encabezados -->
+			<header id="header" class="alt">
+				<span class="image"><img src="/images/logotipo.png" alt="" /></span>
+				<h1><a href="/home">Finanzas Personales</a></h1>
+				{{#if tagline}}
+                    <p class="tagline">{{tagline}}</p>
+                {{/if}}
+			</header>
+
+        {{#if cerrarSesion}}
+        <div class="">
+            <p></p>
+            <a href="/administrar"></a>
+            <a href="/cerrarSesion"></a>
+        </div>
+        {{/if}}
+    </div>
+
+    </header>
+
+    <div class="is-preload">
+        {{#if messages}}
+        <div id="wrapper">
+            <h2 align="center" 
+			style="border: ridge 
+			#ffffff 1px;"><b>
+			{{#mostrarAlertas messages}}
+            {{/mostrarAlertas}}</b></h2>
+        </div>
+        {{/if}}
+        {{{body}}}
+    </div>
+
+    {{!-- Script para trix (WYSIWGY) --}}
+    <script src="/js/trix.js"></script>
+    {{!-- Webpack bundle --}}
+    <script src="/dist/bundle.js"></script>
+
+	<!-- Scripts -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.scrollex.min.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/browser.min.js"></script>
+	<script src="/js/breakpoints.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+
+	<!-- Footer -->
+			<footer id="footer">
+						<section>
+							<h2>Una opción para sus ahorros</h2>
+							<p>La toma de decisiones de inversión no es algo que se deba tomar a la ligera. Como inversor, usted tiene que elegir un camino entre varios; esa elección influirá en su capacidad financiera, presente y futura.</p>
+
+						</section>
+						<section>
+							<h2>Información :</h2>
+							<dl class="alt">
+								<dt>Dirección:</dt>
+								<dd>Universidad Católica de Honduras &bull; 2019</dd>
+								<dt>Teléfono:</dt>
+								<dd>(+504) 9866 - 0887</dd>
+								<dt>Correo:</dt>
+								<dd><a href="#">gmnsanchezunicah@gmail.com</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://twitter.com/?lang=es" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/yosseny.gimena" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.instagram.com/gimena_snchz/?hl=es-la" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/GSanchez98" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy;2019, <a href="https://www.facebook.com/yosseny.gimena">Gimena Sánchez</a>.</p>
+					</footer>
+</body>
+
+</html>

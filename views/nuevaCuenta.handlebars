@@ -1,0 +1,72 @@
+<main class="is-preload">
+     <form action="/cuenta/nueva" method="post" class="default-form">
+        <section id="nuevaCuenta" class="main special">
+
+			<div id="wrapper">
+                <!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="/cerrarSesion" class="fas fa-sign-out-alt"> Cerrar Sesión</a></li>
+                        <li><a href="/administrar" class="fas fa-user-tie"> Administración</a></li>
+						<li><a href="/home" class="fas fa-hand-point-left"> Regresar al inicio</a></li>
+
+					</ul>
+				</nav>	
+
+				<div id="main">
+					<br>
+				</div>
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+                        <label>Bienvenido (a) : {{nombre}} </label>
+					</ul>
+				</nav>		
+
+				<!-- Principal -->
+					<div id="main">
+						<section id="descripcion" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2></h2>
+										</header>
+                                        <h3>Nuevo Registro</h3>
+                                            <div class="major">
+                                                <label class="major" for="nombre">Nombre de la cuenta:</label>
+                                                <input type="text" name="nombre" placeholder="Salario, Renta, Supermercado, Ventas, etc...">
+                                            </div><br>
+
+                                            <div class="major">
+                                                <label class="major" for="salario">Monto (LPS):</label>
+                                                <input type="text" name="monto" placeholder="L. 1200">
+                                            </div><br>
+
+                                            <div class="major">
+                                                <label class="major" for="tipo">Tipo de cuenta</label>
+                                                <select name="tipo">
+                                                    <option value="" disabled selected>Selecciona una opción</option>
+                                                    <option value="ingreso">Ingreso</option>
+                                                    <option value="egreso">Egreso</option>
+                                                </select>
+                                            </div><br>
+
+                                            <div class="major">
+                                                {{!-- Implementar un WYSIWYG --}}
+                                                <label class="major">Descripción</label>
+                                                <input type="hidden" name="descripcion" id="x">
+                                                <trix-editor input="x"></trix-editor>
+                                            </div>
+                                         <footer class="major">
+                                            <ul class="actions special">
+                                                <input type="submit" class="button primary" value="Guardar Registro" >
+                                            </ul>
+                                        </footer>
+									</div>
+								</div>
+						</section>
+					</div>
+			</div>
+        </section>
+     </form>
+</main>

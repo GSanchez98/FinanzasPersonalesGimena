@@ -1,0 +1,51 @@
+<main class="is-preload">
+     <form action="/editarPerfil" method="post" class="default-form" enctype="multipart/form-data">
+        <section id="editarPerfil" class="main special">
+
+			<div id="wrapper">
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+                        <label>Bienvenido (a) : {{nombre}} </label>
+					</ul>
+				</nav>		
+
+				<!-- Principal -->
+					<div id="main">
+						<section id="descripcion" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2></h2>
+										</header>
+                                        <div class="major">
+                                            <label class="major" for="imagen">Imagen de perfil:</label>
+                                            <img src="/uploads/perfiles/{{usuario.imagen}}"><br><br>
+                                            <input class="major" type="file" name="imagen">
+                                        </div><br><br>
+                                        <div class="major">
+                                            <label class="major" for="nombre">Nombre:</label>
+                                            <input type="text" name="nombre" placeholder="Ingresa tu nombre" value="{{usuario.nombre}}" required>
+                                        </div><br>
+                                        <div class="major">
+                                            <label class="major" for="email">Correo electrónico:</label>
+                                            <input type="email" name="email" placeholder="Ingresa tu dirección de correo electrónico"
+                                                value="{{usuario.email}}" required>
+                                        </div><br>
+                                        <div class="major">
+                                            <label class="major" for="password">Contraseña:</label>
+                                            <input type="password" name="password" placeholder="Ingresa tu contraseña">
+                                        </div><br>                                                                             
+                                        <div class="major">
+                                            <input type="submit" value="Guardar cambios" class="button primary">
+                                            <a href="/home" class="button primary"> Cancelar </a>
+                                        </div>
+
+									</div>
+								</div>
+						</section>
+					</div>
+			</div>
+        </section>
+     </form>
+</main>

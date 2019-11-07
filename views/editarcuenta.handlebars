@@ -1,0 +1,74 @@
+<main class="is-preload">
+    <form action="/cuenta/editar/{{cuenta.url}}" method="post" class="default-form">
+        <section id="editarCuenta" class="main special">
+
+			<div id="wrapper">
+            <!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="/cerrarSesion" class="fas fa-sign-out-alt"> Cerrar Sesión</a></li>
+						<li><a href="/administrar" class="fas fa-user-tie"> Administración</a></li>
+                        <li><a href="/home" class="fas fa-hand-point-left"> Regresar al inicio</a></li>
+
+					</ul>
+				</nav>	
+
+				<div id="main">
+					<br>
+				</div>    
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<label>Bienvenido : {{nombre}} </label>
+                    </ul>
+				</nav>		
+
+				<!-- Principal -->
+					<div id="main">
+						<section id="descripcion" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2></h2>
+										</header>
+<main class="">
+
+        <h3>Editar Registro</h3>
+
+        <div class="major">
+            <label class="major" for="nombre">Nombre :</label>
+            <input type="text" name="nombre" placeholder="Salario, Renta, Supermercado, Ventas, etc..."
+                value={{cuenta.nombre}}>
+        </div><br>
+
+        <div class="major">
+            <label class="major" for="monto">Monto (LPS) :</label>
+            <input type="text" name="monto" placeholder="L. 1200" 
+                value="{{cuenta.monto}}">
+        </div><br>
+
+        <div class="major">
+            <label class="major" for="tipo">Tipo de cuenta :</label>
+            <select name="tipo">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="ingreso">Ingreso</option>
+                <option value="egreso">Egreso</option>
+            </select>
+        </div><br>
+
+        <div class="major">
+            {{!-- Implementar un WYSIWYG --}}
+            <label class="major" for="tipo">Descripción :</label>
+            <input type="hidden" name="descripcion" id="x" value="{{{cuenta.descripcion}}}">
+            <trix-editor class="major" input="x"></trix-editor>
+        </div><br><br>
+
+
+        <div class="centrad">
+            <input type="submit" value="Guardar Cambios" class="button primary">
+        </div>
+
+         </div>
+       
+    </form>
+</main>

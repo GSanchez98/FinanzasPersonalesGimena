@@ -1,0 +1,55 @@
+{
+  "name": "finanzaspersonalesgimena",
+  "version": "1.0.0",
+  "description": "App para el manejo de tus finanzas personales o familiares",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^3.1.0",
+    "connect-mongo": "^3.0.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "ember-truth-helpers": "^2.1.0",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.7.5",
+    "nodaemon": "^0.0.5",
+    "nodemailer": "^6.3.1",
+    "nodemailer-express-handlebars": "^3.1.0",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.6",
+    "bcrypt": "^3.0.6",
+    "concurrently": "^5.0.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "http-errors": "^1.7.3",
+    "multer": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "slug": "^1.1.0",
+    "sweet-alert": "^2.0.5",
+    "sweetalert2": "^8.18.5",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "scripts": {
+    "dev": "nodemon ./index",
+    "watch": "webpack --w --mode development",
+    "start": "concurrently \"npm run dev\" \"npm run watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSanchez98/FinanzasPersonalesGimena.git"
+  },
+  "author": "Gimena Sanchez Cabrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSanchez98/FinanzasPersonalesGimena/issues"
+  },
+  "homepage": "https://github.com/GSanchez98/FinanzasPersonalesGimena#readme"
+}
