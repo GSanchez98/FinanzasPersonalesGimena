@@ -41,7 +41,7 @@
     "dev": "nodemon ./index",
     "watch": "webpack --w --mode development",
     "develop": "concurrently \"npm run dev\" \"npm run watch\"",
-    "start":"node ./index.js"
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
